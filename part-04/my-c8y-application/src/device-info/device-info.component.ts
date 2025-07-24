@@ -6,14 +6,13 @@ import {
 } from './device-info.model';
 import { DeviceInfoService } from './device-info.service';
 import { Input } from '@angular/core';
-import { CoreModule } from '@c8y/ngx-components';
-import { IManagedObject } from '@c8y/client';
+import { CoreModule, MeasurementRealtimeService } from '@c8y/ngx-components';
 
 @Component({
   selector: 'c8y-device-info',
   templateUrl: 'device-info.component.html',
   imports: [CoreModule],
-  providers: [DeviceInfoService],
+  providers: [DeviceInfoService, MeasurementRealtimeService],
 })
 export class DeviceInfoComponent implements OnInit, OnDestroy {
   @Input() config!: DeviceInfoWidgetConfig;
