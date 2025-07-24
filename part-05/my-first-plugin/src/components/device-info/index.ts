@@ -1,8 +1,4 @@
-import {
-  gettext,
-  hookWidget,
-  MeasurementRealtimeService,
-} from '@c8y/ngx-components';
+import { gettext, hookWidget } from '@c8y/ngx-components';
 import { DeviceInfoComponent } from './device-info.component';
 import {
   exportConfigWithDevice,
@@ -14,7 +10,6 @@ import {
 } from '@c8y/ngx-components/context-dashboard';
 
 export const deviceInfoViewProviders = [
-  MeasurementRealtimeService,
   hookWidget({
     id: 'device-info.widget',
     label: 'Device Info Widget',
