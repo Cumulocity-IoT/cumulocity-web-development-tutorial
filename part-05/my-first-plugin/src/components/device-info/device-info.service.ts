@@ -1,4 +1,4 @@
-import { Injectable, WritableSignal, signal } from '@angular/core';
+import { Injectable, WritableSignal, inject, signal } from '@angular/core';
 import { InventoryService } from '@c8y/client';
 import { Subscription } from 'rxjs';
 import { DeviceDetails, TemperatureMeasuerement } from './device-info.model';
@@ -16,10 +16,11 @@ export class DeviceInfoService {
 
   private readonly TEMPERATURE_SERIES = 'T';
 
-  constructor(
-    private inventoryService: InventoryService,
-    private measurementRealtimeService: MeasurementRealtimeService
-  ) {}
+  private inventoryService: InventoryService = inject(InventoryService);
+
+  private measurementRealtimeService: MeasurementRealtimeService = inject(
+    MeasurementRealtimeService
+  );
 
   async getDeviceDetails(deviceId: string): Promise<DeviceDetails | undefined> {
     try {

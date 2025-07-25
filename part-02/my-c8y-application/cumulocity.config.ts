@@ -1,11 +1,12 @@
 import type { ConfigurationOptions } from '@c8y/devkit';
-import { version, name } from './package.json';
+import { version, name, license } from './package.json';
 
 export default {
   runTime: {
     version,
     name,
-    dynamicOptionsUrl: true
+    dynamicOptionsUrl: true,
+    license
   },
   buildTime: {
     federation: [
